@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Chill Vibes",
-      "tracks": [
+      "songs": [
         {
           "id": 101,
           "title": "Lofi Beats",
@@ -19,7 +19,7 @@
     {
       "id": 2,
       "name": "Workout Mix",
-      "tracks": [
+      "songs": [
         {
           "id": 201,
           "title": "Pump It Up",
@@ -35,7 +35,7 @@
     {
       "id": 3,
       "name": "Classic Rock",
-      "tracks": [
+      "songs": [
         {
           "id": 301,
           "title": "Rock Anthem",
@@ -51,7 +51,7 @@
     {
       "id": 4,
       "name": "Pop Hits",
-      "tracks": [
+      "songs": [
         {
           "id": 401,
           "title": "Top of the Charts",

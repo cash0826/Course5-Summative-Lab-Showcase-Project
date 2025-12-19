@@ -1,11 +1,26 @@
-import { Outlet } from "react-router-dom";
+import { Link, useOutletContext, useParams } from "react-router-dom";
 
-function PlaylistDetails({ playlist }) {
+function PlaylistDetails() {
+  const { playlists } = useOutletContext();
+  const { id } = useParams();
+
+  const playlist = playlists.find(pl => pl.id === parseInt(id));
+
+  if (!playlist) {
+    return <p>Playlist not found.</p>;
+  }
+
   return (
     <div>
       <h1>{playlist.name}</h1>
-      <p>{playlist.description}</p>
-      <Outlet />
+      <ol>
+        {playlist.songs.map((song) => (
+          <li key={song.id}>{song.title} by {song.artist}</li>
+        ))}
+      </ol>
+      <button>Edit Playlist</button>
+      <button>Delete Playlist</button>
+      <button><Link to="addNewSong">Add New Song</Link></button>
     </div>
   );
 }

@@ -9,13 +9,13 @@ function NavBar() {
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/playlists">Playlists</Link>
-      <Link to="/playlists/createPlaylist">Create Playlist</Link>
-      <input 
+      <Link to="/createPlaylist">Create Playlist</Link>
+      {/* <input 
         type="text" 
         placeholder="Search..."
         value={query}
         onChange={handleSearch}
-      />
+      /> */}
     </nav>
   )
 }
