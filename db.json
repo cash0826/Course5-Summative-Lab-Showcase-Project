@@ -1,0 +1,68 @@
+{
+  "playlists": [
+    {
+      "id": 1,
+      "name": "Chill Vibes",
+      "tracks": [
+        {
+          "id": 101,
+          "title": "Lofi Beats",
+          "artist": "DJ Relax"
+        },
+        {
+          "id": 102,
+          "title": "Smooth Jazz",
+          "artist": "The Jazz Masters"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Workout Mix",
+      "tracks": [
+        {
+          "id": 201,
+          "title": "Pump It Up",
+          "artist": "Fitness Freaks"
+        },
+        {
+          "id": 202,
+          "title": "Run Faster",
+          "artist": "Speedy Tunes"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Classic Rock",
+      "tracks": [
+        {
+          "id": 301,
+          "title": "Rock Anthem",
+          "artist": "The Rockers"
+        },
+        {
+          "id": 302,
+          "title": "Guitar Hero",
+          "artist": "String Masters"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pop Hits",
+      "tracks": [
+        {
+          "id": 401,
+          "title": "Top of the Charts",
+          "artist": "Pop Stars"
+        },
+        {
+          "id": 402,
+          "title": "Dance All Night",
+          "artist": "Party People"
+        }
+      ]
+    }
+  ]
+}
