@@ -15,11 +15,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/playlists" element={<PlaylistContainer />} />
-            <Route path="" element={<PlaylistList />} />
+          <Route path="/playlists" element={<PlaylistContainer />}>
             <Route path="createPlaylist" element={<CreatePlaylist />} />
-            <Route path=":id" element={<PlaylistDetails />} />
+            <Route path=":id" element={<PlaylistDetails />}>
               <Route path="addNewSong" element={<AddNewSong />} />
+            </Route>
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

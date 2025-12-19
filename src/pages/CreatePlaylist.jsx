@@ -3,7 +3,6 @@ import NavBar from "../components/NavBar";
 function CreatePlaylist() {
   return (
     <div>
-      <NavBar />
       <form>
         <h1>Create a New Playlist</h1>
         <label>
