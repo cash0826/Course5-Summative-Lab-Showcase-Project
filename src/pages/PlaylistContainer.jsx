@@ -26,6 +26,7 @@ function PlaylistContainer() {
       <p>Pick your poison:</p>
       <ul>{displayPlaylists}</ul>
       <Outlet context={{ playlists }} />
+      <br/>
       <Link to="/createPlaylist"><button>Create a new Playlist</button></Link>
     </div>
   )

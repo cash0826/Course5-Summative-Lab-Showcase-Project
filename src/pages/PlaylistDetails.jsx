@@ -18,9 +18,7 @@ function PlaylistDetails() {
           <li key={song.id}>{song.title} by {song.artist}</li>
         ))}
       </ol>
-      <button>Edit Playlist</button>
-      <button>Delete Playlist</button>
-      <button><Link to="addNewSong">Add New Song</Link></button>
+      <Link to="addNewSong"><button>Add New Song</button></Link>
     </div>
   );
 }
