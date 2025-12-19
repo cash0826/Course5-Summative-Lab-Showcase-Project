@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import getAllPlaylists from "../services/PlaylistService";
-
+import PlaylistList from "./PlaylistList";
 
 function PlaylistContainer() {
   const [playlists, setPlaylists] = useState([]);
@@ -15,20 +15,17 @@ function PlaylistContainer() {
     });
   }, []);
 
-  const displayPlaylists = playlists.map((playlist) => (
-    <li key={playlist.id}><Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link></li>
-  ));
-
   return (
-    <div >
+    <>
       <NavBar />
-      <h1>Curated Playlists</h1>
-      <p>Pick your poison:</p>
-      <ul>{displayPlaylists}</ul>
-      <Outlet context={{ playlists }} />
-      <br/>
-      <Link to="/createPlaylist"><button>Create a new Playlist</button></Link>
-    </div>
-  )
+      <main>
+        <h1>Curated Playlists</h1>
+        {/* <PlaylistList playlists={playlists} /> */}
+        <Outlet context={{ playlists }} />
+        <Link to="/createPlaylist"><button>Create New Playlist</button></Link>
+      </main>
+    </>
+  );
 }
+
 export default PlaylistContainer;
