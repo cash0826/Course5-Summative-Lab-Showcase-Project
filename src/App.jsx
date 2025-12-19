@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import PlaylistContainer from "./pages/PlaylistContainer";
-import PlaylistList from "./pages/PlaylistList";
+
 import CreatePlaylist from "./pages/CreatePlaylist";
 import PlaylistDetails from "./pages/PlaylistDetails";
 import AddNewSong from "./pages/AddNewSong";
