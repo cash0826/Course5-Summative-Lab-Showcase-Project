@@ -1,66 +1,102 @@
 {
   "playlists": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Chill Vibes",
-      "tracks": [
+      "description": "Relaxing beats for your downtime",
+      "songs": [
         {
-          "id": 101,
+          "id": "101",
           "title": "Lofi Beats",
           "artist": "DJ Relax"
         },
         {
-          "id": 102,
+          "id": "102",
           "title": "Smooth Jazz",
           "artist": "The Jazz Masters"
         }
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Workout Mix",
-      "tracks": [
+      "description": "High-energy tracks to keep you moving",
+      "songs": [
         {
-          "id": 201,
+          "id": "201",
           "title": "Pump It Up",
           "artist": "Fitness Freaks"
         },
         {
-          "id": 202,
+          "id": "202",
           "title": "Run Faster",
           "artist": "Speedy Tunes"
         }
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Classic Rock",
-      "tracks": [
+      "description": "Timeless rock anthems",
+      "songs": [
         {
-          "id": 301,
+          "id": "301",
           "title": "Rock Anthem",
           "artist": "The Rockers"
         },
         {
-          "id": 302,
+          "id": "302",
           "title": "Guitar Hero",
           "artist": "String Masters"
         }
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Pop Hits",
-      "tracks": [
+      "description": "The latest and greatest in pop music",
+      "songs": [
         {
-          "id": 401,
+          "id": "401",
           "title": "Top of the Charts",
           "artist": "Pop Stars"
         },
         {
-          "id": 402,
+          "id": "402",
           "title": "Dance All Night",
           "artist": "Party People"
+        }
+      ]
+    },
+    {
+      "id": "c116",
+      "name": "Mac DeMarco",
+      "description": "I love this guy",
+      "songs": [
+        {
+          "id": "84c9400a-a6be-4eba-99ef-575fd0d28201",
+          "title": "Chamber Of Reflection",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "38cc1e61-04cd-47c2-83c7-64519b6da11c",
+          "title": "For the First Time",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "114b9a5f-8d81-4fd3-9554-2733b4d97db7",
+          "title": "Heart to Heart",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "95edb161-53e5-4449-8f0a-78bbd13ab729",
+          "title": "Pepperoni Playboy",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "c637e013-b90a-4512-84fe-85a2525fa840",
+          "title": "Moonlight on the River",
+          "artist": "Mac DeMarco"
         }
       ]
     }

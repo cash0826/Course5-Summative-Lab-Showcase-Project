@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import PlaylistContainer from "./pages/PlaylistContainer";
-
+import PlaylistList from "./pages/PlaylistList";
 import CreatePlaylist from "./pages/CreatePlaylist";
-import PlaylistDetails from "./pages/PlaylistDetails";
-import AddNewSong from "./pages/AddNewSong";
+import PlaylistCard from "./pages/PlaylistCard";
+import SongForm from "./pages/SongForm";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -15,10 +15,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/createPlaylist" element={<CreatePlaylist />} />
           <Route path="/playlists" element={<PlaylistContainer />}>
-            <Route path="createPlaylist" element={<CreatePlaylist />} />
-            <Route path=":id" element={<PlaylistDetails />}>
-              <Route path="addNewSong" element={<AddNewSong />} />
+            <Route path="" element={<PlaylistList />} />
+            <Route path=":id" element={<PlaylistCard />}>
+              <Route path="addNewSong" element={<SongForm />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
