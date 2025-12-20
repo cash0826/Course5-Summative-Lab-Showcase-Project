@@ -21,7 +21,9 @@ function PlaylistContainer() {
         <h1>Curated Playlists</h1>
         {/* <PlaylistList playlists={playlists} /> */}
         <Outlet context={{ playlists }} />
-        <Link to="/createPlaylist"><button>Create New Playlist</button></Link>
+        <div>
+          <Link to="/createPlaylist"><button>Create New Playlist</button></Link>
+        </div>
       </main>
     </>
   );

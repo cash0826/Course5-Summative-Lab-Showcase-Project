@@ -5,7 +5,7 @@ import PlaylistContainer from "./pages/PlaylistContainer";
 import PlaylistList from "./pages/PlaylistList";
 import CreatePlaylist from "./pages/CreatePlaylist";
 import PlaylistCard from "./pages/PlaylistCard";
-import AddNewSong from "./pages/AddNewSong";
+import SongForm from "./pages/SongForm";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/playlists" element={<PlaylistContainer />}>
             <Route path="" element={<PlaylistList />} />
             <Route path=":id" element={<PlaylistCard />}>
-              <Route path="addNewSong" element={<AddNewSong />} />
+              <Route path="addNewSong" element={<SongForm />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />

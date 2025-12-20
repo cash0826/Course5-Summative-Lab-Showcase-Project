@@ -66,6 +66,17 @@ button:hover {
   background-color: #f5f5f5;
 }
 
+.playlist-details {
+  text-align: left;
+  border: grey;
+  display: inline-block;
+  margin: 1rem 2rem;
+  padding: 1rem 2rem;
+  box-shadow: blueviolet;
+  border-radius: 12px;
+  background-color: #f5f5f5;
+}
+
 .create-playlist-form {
   text-align: left;
   border: grey;
