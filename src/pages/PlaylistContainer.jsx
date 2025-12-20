@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import getAllPlaylists from "../services/PlaylistService";
-import PlaylistList from "./PlaylistList";
+import { getAllPlaylists } from "../services/PlaylistService";
 
 function PlaylistContainer() {
   const [playlists, setPlaylists] = useState([]);
