@@ -30,9 +30,9 @@ function AddNewSong() {
   }
 
   return (
-    <div>
-      <h5>Add New Song</h5>
-      <form onSubmit={handleSubmit}>
+    <>
+      <h2>Add a New Song</h2>
+      <form className="song-form" onSubmit={handleSubmit}>
         <label>Song:</label>
         <input 
           type="text" 
@@ -54,7 +54,7 @@ function AddNewSong() {
         <button type="submit">Add Song</button>
         <br/>
       </form>
-    </div>
+    </>
   )
 }
 

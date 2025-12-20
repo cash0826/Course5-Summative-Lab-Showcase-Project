@@ -1,10 +1,11 @@
 import { Link, useOutletContext, useParams } from "react-router-dom";
 import { useState } from "react";
 import SongForm from "./SongForm";
+import { deletePlaylist } from "../services/PlaylistService";
 
 function PlaylistCard() {
   const [showForm, setShowForm] = useState(false);
-  const { playlists } = useOutletContext();
+  const { playlists, setPlaylists } = useOutletContext();
   const params = useParams();
   const playlist = playlists.find(p => p.id.toString() === params.id);
 
@@ -12,12 +13,14 @@ function PlaylistCard() {
     setShowForm((showForm) => !showForm);
   }
 
+  async function handleDelete() {
+    await deletePlaylist(playlist.id);
+    setPlaylists(playlists.filter(p => p.id !== playlist.id));
+  }
+
   if (!playlist) {
     return <p>Playlist not found.</p>;
   }
-
-  // AI suggested fix for songs not being an array
-  // const songs = Array.isArray(playlist.songs) ? playlist.songs : (playlist.songs ? [playlist.songs] : []);
 
   const displayPlaylists = playlist.songs.map((song) => (
     <li key={song.id ?? `${song.title}-${song.artist}`}>{song.title} by {song.artist}</li>
@@ -25,21 +28,16 @@ function PlaylistCard() {
 
   return (
     <div className="playlist-details">
-      <h3>{playlist.name}</h3>
+      <h2>{playlist.name}</h2>
       <p>{playlist.description}</p>
-      <ol>
+      <ol className="song-list">
         {displayPlaylists}
       </ol>
-      <div>
-        {showForm ? <SongForm /> : null}
-        <div>
-          <br/>
-          <button onClick={handleClick}>
-            {showForm ? "Hide Form" : "Add New Song"}
-          </button>
-        </div>
-        <br/>
-      </div>
+      {showForm ? <SongForm /> : null}
+        <button onClick={handleClick}>
+          {showForm ? "Hide Form" : "Add New Song"}
+        </button>
+      <button onClick={handleDelete}>Delete Playlist</button>
       <div>
         <Link to="/playlists"><button>Back to Playlists</button></Link>
       </div>
