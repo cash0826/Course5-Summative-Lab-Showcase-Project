@@ -7,10 +7,14 @@ import CreatePlaylist from "./pages/CreatePlaylist";
 import PlaylistCard from "./pages/PlaylistCard";
 import SongForm from "./pages/SongForm";
 import NotFound from "./pages/NotFound";
+import { useContext } from "react";
+import { ThemeContext } from "./context/ThemeContext.jsx";
 
 const App = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <>
+    <div className={`app-container ${theme === "dark" ? "dark" : ""}`}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,7 +29,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

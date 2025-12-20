@@ -1,14 +1,20 @@
 import NavBar from "../components/NavBar";
-import { useState } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import { addPlaylist } from "../services/PlaylistService";
 import { useNavigate } from "react-router-dom";
 
 function CreatePlaylist() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const inputRef = useRef(null);
+  const id = useId();
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  async function handleSubmit(e) {
     e.preventDefault();
     // Logic to create a new playlist goes here
     const newPlaylist = {
@@ -16,7 +22,7 @@ function CreatePlaylist() {
       description: description,
       songs: []
     };
-    addPlaylist(newPlaylist);
+    await addPlaylist(newPlaylist);
     setName("");
     setDescription("");
     alert("Playlist Created!");
@@ -33,8 +39,11 @@ function CreatePlaylist() {
           <input 
             type="text" 
             name="name"
+            id={id}
+            ref={inputRef}
             placeholder="My Amazing New Playlist"
-            value={name} 
+            value={name}
+            required
             onChange={(e) => setName(e.target.value)} />
         </label>
         <br />
@@ -44,6 +53,7 @@ function CreatePlaylist() {
             name="description"
             placeholder="A collection of my favorite tunes."
             value={description} 
+            required
             onChange={(e) => setDescription(e.target.value)}></textarea>
         </label>
         <br />

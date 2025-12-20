@@ -41,3 +41,14 @@ export async function updatePlaylist(playlistId, newSongData, songs) {
   }
   throw new Error(`Error adding song to playlist: ${response.statusText}`);
 }
+
+export async function deletePlaylist(playlistId) {
+  const url = `${baseUrl}/playlists/${playlistId}`;
+  const response = await fetch(url, {
+    method: "DELETE"
+  });
+  if (response.ok) {
+    return response;
+  }
+  throw new Error(`Error deleting playlist: ${response.statusText}`);
+}
