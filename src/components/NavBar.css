@@ -8,3 +8,8 @@
   color: white;
   font-weight: bold;
 }
+
+.navbar > a:hover {
+  background-color: #3c4048;
+  text-decoration: none;
+}

@@ -7,6 +7,16 @@
   background-color: white;
 }
 
+#search-input {
+  text-align: left;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 150px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 body {
   margin: 0;
   display: flex;

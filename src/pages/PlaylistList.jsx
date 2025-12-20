@@ -18,7 +18,7 @@ function PlaylistList() {
   return (
     <div>
       <h2>Pick your Poison:</h2>
-      <Outlet context={{ playlists }} />
+      <Outlet context={{ playlists, setPlaylists }} />
       <div className="playlist-list">
         {cards}
       </div>

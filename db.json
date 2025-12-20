@@ -72,7 +72,33 @@
       "id": "c116",
       "name": "Mac DeMarco",
       "description": "I love this guy",
-      "songs": []
+      "songs": [
+        {
+          "id": "84c9400a-a6be-4eba-99ef-575fd0d28201",
+          "title": "Chamber Of Reflection",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "38cc1e61-04cd-47c2-83c7-64519b6da11c",
+          "title": "For the First Time",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "114b9a5f-8d81-4fd3-9554-2733b4d97db7",
+          "title": "Heart to Heart",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "95edb161-53e5-4449-8f0a-78bbd13ab729",
+          "title": "Pepperoni Playboy",
+          "artist": "Mac DeMarco"
+        },
+        {
+          "id": "c637e013-b90a-4512-84fe-85a2525fa840",
+          "title": "Moonlight on the River",
+          "artist": "Mac DeMarco"
+        }
+      ]
     }
   ]
 }

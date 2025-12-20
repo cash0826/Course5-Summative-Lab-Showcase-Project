@@ -1,28 +1,27 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useNavigate, useOutletContext, useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { updatePlaylist } from "../services/PlaylistService";
 
 function AddNewSong() {
-  const { playlists } = useOutletContext();
+  const { playlists, setPlaylists } = useOutletContext();
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
-  const navigate = useNavigate();
   const { id } = useParams();
   const playlist = playlists.find(p => p.id === id);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
       e.preventDefault();
       const newSong = {
           id: uuidv4(),
           title: title,
           artist: artist
       };
-      updatePlaylist(playlist.id, newSong, playlist.songs);
+      await updatePlaylist(playlist.id, newSong, playlist.songs).then(playlist => {
+          setPlaylists(previous => playlists.map(p => p.id === playlist.id ? playlist : p));
+      });
       setTitle("");
       setArtist("");
-      alert("Song added to playlist!");
-      navigate(`/playlists/${playlist.id}`);
   }
 
   return (
@@ -35,6 +34,7 @@ function AddNewSong() {
           name="title"
           placeholder="Song Title"
           required 
+          value={title}
           onChange={(e) => setTitle(e.target.value)} />
         <br />
         <label>Artist:</label>
@@ -43,6 +43,7 @@ function AddNewSong() {
           name="artist" 
           placeholder="Artist Name"
           required 
+          value={artist}
           onChange={(e) => setArtist(e.target.value)} />
         <br />
         <button type="submit">Add Song</button>
