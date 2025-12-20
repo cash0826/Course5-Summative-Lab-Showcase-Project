@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useOutletContext, useParams } from "react-router-dom";
 import { updatePlaylist } from "../services/PlaylistService";
@@ -8,7 +8,12 @@ function AddNewSong() {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const { id } = useParams();
+  const inputRef = useRef(null);
   const playlist = playlists.find(p => p.id === id);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   async function handleSubmit(e) {
       e.preventDefault();
@@ -33,6 +38,7 @@ function AddNewSong() {
           type="text" 
           name="title"
           placeholder="Song Title"
+          ref={inputRef}
           required 
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
@@ -45,7 +51,6 @@ function AddNewSong() {
           required 
           value={artist}
           onChange={(e) => setArtist(e.target.value)} />
-        <br />
         <button type="submit">Add Song</button>
         <br/>
       </form>

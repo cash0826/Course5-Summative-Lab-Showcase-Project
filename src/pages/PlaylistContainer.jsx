@@ -47,7 +47,7 @@ function PlaylistContainer() {
   );
 
   return (
-    <>
+    <div>
       <NavBar />
       {searchBar}
       <main>
@@ -57,7 +57,7 @@ function PlaylistContainer() {
           <Link to="/createPlaylist"><button>Create New Playlist</button></Link>
         </div>
       </main>
-    </>
+    </div>
   );
 }
 
