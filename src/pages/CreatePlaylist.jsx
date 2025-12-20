@@ -1,10 +1,12 @@
 import NavBar from "../components/NavBar";
 import { useState } from "react";
 import { addPlaylist } from "../services/PlaylistService";
+import { useNavigate } from "react-router-dom";
 
 function CreatePlaylist() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,6 +20,7 @@ function CreatePlaylist() {
     setName("");
     setDescription("");
     alert("Playlist Created!");
+    navigate("/playlists");
   }
 
   return (

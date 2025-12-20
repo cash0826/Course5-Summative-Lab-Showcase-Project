@@ -16,14 +16,19 @@ function PlaylistCard() {
     return <p>Playlist not found.</p>;
   }
 
+  // AI suggested fix for songs not being an array
+  // const songs = Array.isArray(playlist.songs) ? playlist.songs : (playlist.songs ? [playlist.songs] : []);
+
+  const displayPlaylists = playlist.songs.map((song) => (
+    <li key={song.id ?? `${song.title}-${song.artist}`}>{song.title} by {song.artist}</li>
+  ));
+
   return (
     <div className="playlist-details">
       <h3>{playlist.name}</h3>
       <p>{playlist.description}</p>
       <ol>
-        {playlist.songs.map((song) => (
-          <li key={song.id}>{song.title} by {song.artist}</li>
-        ))}
+        {displayPlaylists}
       </ol>
       <div>
         {showForm ? <SongForm /> : null}

@@ -27,3 +27,17 @@ export async function addPlaylist(newPlaylistData) {
     return null;
   }
 }
+
+export async function updatePlaylist(playlistId, newSongData, songs) {
+  const url = `${baseUrl}/playlists/${playlistId}`;
+  const response = await fetch(url, {
+    method: "PATCH",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ songs: [...songs, newSongData] })
+  });
+  if (response.ok) {
+    const data = await response.json();
+    return data;
+  }
+  throw new Error(`Error adding song to playlist: ${response.statusText}`);
+}

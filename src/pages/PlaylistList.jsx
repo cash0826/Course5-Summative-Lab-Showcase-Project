@@ -1,8 +1,7 @@
-import PlaylistCard from "./PlaylistCard";
 import { Link, Outlet, useOutletContext } from "react-router-dom";
 
 function PlaylistList() {
-  const { playlists } = useOutletContext();
+  const { playlists, setPlaylists } = useOutletContext();
 
   if (playlists.length === 0) {
     return <p>Loading Your Curated Playlists...</p>;

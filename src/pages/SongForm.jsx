@@ -1,32 +1,49 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
+import { updatePlaylist } from "../services/PlaylistService";
 
 function AddNewSong() {
-const [title, setTitle] = useState("");
-const [artist, setArtist] = useState("");
+  const { playlists } = useOutletContext();
+  const [title, setTitle] = useState("");
+  const [artist, setArtist] = useState("");
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const playlist = playlists.find(p => p.id === id);
 
-function handleSubmit(e) {
-    e.preventDefault();
-    const newSong = { title, artist };
-    console.log("New song added:", newSong);
-    setTitle("");
-    setArtist("");
-}
+  function handleSubmit(e) {
+      e.preventDefault();
+      const newSong = {
+          id: uuidv4(),
+          title: title,
+          artist: artist
+      };
+      updatePlaylist(playlist.id, newSong, playlist.songs);
+      setTitle("");
+      setArtist("");
+      alert("Song added to playlist!");
+      navigate(`/playlists/${playlist.id}`);
+  }
 
   return (
     <div>
-      <h1>Add New Song</h1>
+      <h5>Add New Song</h5>
       <form onSubmit={handleSubmit}>
-        <label>Song Title:</label>
+        <label>Song:</label>
         <input 
           type="text" 
-          name="title" 
-          required />
+          name="title"
+          placeholder="Song Title"
+          required 
+          onChange={(e) => setTitle(e.target.value)} />
         <br />
         <label>Artist:</label>
         <input 
           type="text" 
           name="artist" 
-          required />
+          placeholder="Artist Name"
+          required 
+          onChange={(e) => setArtist(e.target.value)} />
         <br />
         <button type="submit">Add Song</button>
         <br/>
