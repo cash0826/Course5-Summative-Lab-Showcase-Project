@@ -1,6 +1,7 @@
+import React from 'react'
 import NavBar from "../components/NavBar";
 import { useState, useRef, useEffect, useId } from "react";
-import { addPlaylist } from "../services/PlaylistService";
+import { addPlaylist } from "../services/PlaylistService"; 
 import { useNavigate } from "react-router-dom";
 
 function CreatePlaylist() {

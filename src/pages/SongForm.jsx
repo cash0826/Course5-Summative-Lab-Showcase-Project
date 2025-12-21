@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useOutletContext, useParams } from "react-router-dom";
@@ -22,9 +23,9 @@ function AddNewSong() {
           title: title,
           artist: artist
       };
-      await updatePlaylist(playlist.id, newSong, playlist.songs).then(playlist => {
-          setPlaylists(previous => playlists.map(p => p.id === playlist.id ? playlist : p));
-      });
+      // Await the update and then apply the returned playlist to state
+      const updated = await updatePlaylist(playlist.id, newSong, playlist.songs);
+      setPlaylists(previous => playlists.map(p => p.id === updated.id ? updated : p));
       setTitle("");
       setArtist("");
   }

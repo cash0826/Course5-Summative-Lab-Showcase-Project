@@ -6,6 +6,8 @@ This app allows users to select from already established playlists, or create th
 
 ## Setup
 
+Run the following commands in your command line interface:
+
 `npm install`
 `npm run dev`
 `npm run server`
